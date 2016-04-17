@@ -1,2 +1,2 @@
-# map672
-Modules for Map 672
+# Norman's Map 672 Modules
+Let's start programming!
