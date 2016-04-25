@@ -16,44 +16,44 @@
         }
         /* Heading rules are below. */
         h1 {
-    font-size: 1.6em;
-    margin-left: 25px;
-}
-h2 {
-    font-size: 1.4em;
-    margin-left: 25px;
-}
-p {
-    font-size: 1em;
-    margin: 15px 25px;
-    max-width: 800px;
-}
-        a {
-    color: #3e6b93;
-    font-weight: bold;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-img {
-    margin-left: 25px;   
-}
+            font-size: 1.6em;
+            margin-left: 25px;
+        }
+        h2 {
+            font-size: 1.4em;
+            margin-left: 25px;
+        }
+        p {
+            font-size: 1em;
+            margin: 15px 25px;
+            max-width: 800px;
+        }
+                a {
+            color: #3e6b93;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            margin-left: 25px;   
+        }
         /* Rules for selecting the box and circle elements are below. */
         #box {
-    width: 200px;
-    height: 200px;
-    background: #3e6b93;
-    margin: 25px;
-}
+            width: 200px;
+            height: 200px;
+            background: #3e6b93;
+            margin: 25px;
+        }
         .circle {
-    width: 100px;
-    height: 100px;
-    background: #bf6864;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 25px;
-}
+            width: 100px;
+            height: 100px;
+            background: #bf6864;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 25px;
+        }
     </style>
     
 </head>
@@ -80,21 +80,25 @@ img {
     <div class="circle"></div>
     
     <script>
-       document.querySelector('h1').innerHTML = 'web mapping is sweet!';
+        document.querySelector('h1').innerHTML = 'web mapping is sweet!';
+        
         var box = document.getElementById('box');
-box.style.background = '#4d4a9f'; 
+        box.style.background = '#4d4a9f'; 
+        
         var elements = document.getElementsByClassName('circle');
 
-for(var i=0; i <= elements.length-1;i++){
-    elements[i].style['border-radius'] = '20%';  
-}
-        // Here is the java code, which requires a user to click on an element before dynamically changing it.
+        for(var i=0; i <= elements.length-1;i++){
+            elements[i].style['border-radius'] = '20%';  
+        }
+        // Here is the JavaScript code, which requires a user to click on an element before dynamically changing it.
         box.addEventListener('click', function() {
-    this.style.width = '400px';   
-});
+            this.style.width = '400px';   
+        });
+        
         var newListItem = document.createElement('li');
-newListItem.innerHTML = "list item 4";
-document.querySelector('ul').appendChild(newListItem);
+        newListItem.innerHTML = "list item 4";
+        document.querySelector('ul').appendChild(newListItem);
+        
         console.log("hello map");
     </script>
     
