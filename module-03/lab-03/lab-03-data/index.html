@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Lab 03 Starter Template</title>
+    <title>Great Places in America</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -59,8 +59,6 @@
     <footer>
         <p>Map authored by Norman Ornelas Jr.</p>
         <p>Population data provided by US Census, and Latitude/Longitude data provided by latlong.net.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
-        </p>
     </footer>
 
     <script>
@@ -105,7 +103,7 @@
         var totalPop = city1Pop + city2Pop + city3Pop;
         console.log ("The total population of these cities is", totalPop);
         
-        var averagePop = (city1Pop + city2Pop + city3Pop)/3;
+        var averagePop = totalPop/3;
         console.log ("The average population of these cities is", averagePop);
         
         var cities = ["Lexingont", "Frankfort", "Los Angeles"]
@@ -115,7 +113,7 @@
         
         // CITY1 MARKER CODE HERE
         var city1Popup = "<b>"+city1Name+"</b><br>"
-                        +"<b>population</b>: "+city1Pop;
+                        +"<b>population</b>: "+city1Pop.toLocaleString();
         
         if(city1Capital == true) {
             city1Popup += "<br>Capital of the Commonwealth of Kentucky";   
@@ -126,7 +124,7 @@
         
         //  CITY2 MARKER CODE HERE
         var city2Popup = "<b>"+city2Name+"</b><br>"
-             +"<b>population</b>: "+city2Pop;
+             +"<b>population</b>: "+city2Pop.toLocaleString();
         
         if(city2Capital == true) {
             city2Popup += "<br>Capital of the Commonwealth of Kentucky";   
@@ -137,7 +135,7 @@
         
         // CITY3 MARKER CODE HERE
         var city3Popup = "<b>"+city3Name+"</b><br>"
-            +"<b>population</b>: "+city3Pop;
+            +"<b>population</b>: "+city3Pop.toLocaleString();
 
         if(city3Capital == true) {
             city3Popup += "<br>Capital of the Commonwealth of Kentucky";   
