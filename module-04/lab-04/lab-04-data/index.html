@@ -81,34 +81,23 @@
         // begin writing/editing Lab 04 code here
         
         var cities = ["New York City", "Madrid", "Montreal"];
-        for (var i = 0; i < cities.length; i++) {    
-        console.log (i)
-        console.log (cities[i])
-        }
-        
         var cityCoords = [[40.7306,-73.9352], [40.4154,-3.7074], [45.5017, -73.5673]];
-        for (var i = 0; i < cityCoords.length; i++) {
-        console.log (i)
-        console.log (cityCoords[i])
-        }
-        
         var cityPops = [8406000, 3165000, 1065000];
-        for (var i = 0; i < cityPops.length; i++) { 
-        }
-        
         var cityCapital = [(false), (true), (false)];
-        for (var i = 0; i < cityCapital.length; i++) { 
-        }
-  
+        
+        for (var i = 0; i < cities.length; i++) {
+        
         var popup = "<b>"+(cities[i])+"</b><br>"
-            +"<b>population</b>: "+cityPops[i];
-                
-            if(cityCapital[i] === true) 
-            popup += "<br>Is the capital city."; {   
+        +"<b>population</b>: "+cityPops[i];
+
+        if(cityCapital[i] === true) {
+        popup += "<br>Is the capital city.";
         }
 
         L.marker ([cityCoords[i]]).addTo(map)
-            .bindPopup(popup); {
+        .bindPopup(popup);{
+        }
+        
         }
         
          // end writing/editing Lab 04 code here
