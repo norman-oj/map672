@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Lab 04 Starter Template</title>
+    <title>Cities I've Lived In</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -59,9 +59,6 @@
 
     <footer>
         <p>Map authored by Norman Ornelas Jr.</p>
-        <p>Additional information about the data and map goes here.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl. Vestibulum commodo imperdiet lacus, sed facilisis erat placerat sit amet. Nulla consequat malesuada neque eget aliquet. Integer non convallis nisl, gravida ultrices ex. Fusce nec vestibulum elit. Sed elementum lectus ipsum, vulputate elementum ex laoreet a. Aenean eu ex varius, varius felis vitae, efficitur nulla. Quisque pretium laoreet ante, in sodales dui vehicula at. Mauris eu sem sapien.
-        </p>
     </footer>
 
     <script>
@@ -87,16 +84,16 @@
         
         for (var i = 0; i < cities.length; i++) {
         
-        var popup = "<b>"+(cities[i])+"</b><br>"
-        +"<b>population</b>: "+cityPops[i];
+            var popup = "<b>"+(cities[i])+"</b><br>"
+                +"<b>population</b>: "+cityPops[i].toLocaleString();
 
-        if(cityCapital[i] === true) {
-        popup += "<br>Is the capital city.";
-        }
+            if(cityCapital[i] === true) {
+                popup += "<br>Is the capital city.";
+            }
 
-        L.marker (cityCoords[i]).addTo(map)
-        .bindPopup(popup);{
-        }
+            L.marker (cityCoords[i]).addTo(map)
+                .bindPopup(popup);{
+            }
         
         }
         
