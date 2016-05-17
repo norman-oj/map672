@@ -90,10 +90,10 @@
     // adds these tiles to the map
     map.addLayer(tiles);
     
-//    var cities = // write 3 city names as Strings within an array
-//    var cityCoords = // write a two-dimensional array of the coordinates for each city
-//    var cityPops = // write the populations of the 3 cities as Numbers within an array;
-//    var cityAreas = // write the areas of the 3 cities as Numbers within an array;
+    var cities = ["Mexico City", "Glasgow", "Hong Kong"];
+    var cityCoords = [[23.6345,-102.5528], [55.8642,-4.2518], [22.3964, 114.1095]];
+    var cityPops = [8851000, 598830, 7188000];
+    var cityArea = [573, 68, 462];
         
     var button = document.getElementById("map-cities");
     
@@ -101,7 +101,11 @@
          
         var units = prompt('Enter the units for calculating density', 'Enter "miles" or "km"');
         
-        console.log(units);
+        function mapCities() {
+                              
+        }
+        
+        mapCities(units);
         
         // call a function named mapCities, and send the units variable as an argument
         
@@ -110,13 +114,36 @@
     
     // write a function here named mapCities so that it accepts units as a parameter
     
+        function mapCities (units) {
+            for (var i = 0; i < cities.length; i++)
+                function calcPopDensity (){
+                    
+                }
+                calcPopDensity(cityPops, cityArea, units)
+                
+            var units = density 
+                
+        }
+    
     
     // write a function named calcPopDensity here so that it accepts a single city's
     // population, area, and the value for units determined by the user
+    
+        function calcPopDensity (cityPops, cityArea, units) {
+            var density = cityPops/cityArea
+            return
+        }
 
     
-    
-    
+        for (var i = 0; i < cities.length; i++) {
+        var popup = "<b>"+(cities[i])+"</b><br>"
+        +"<b>Density</b>: "+calcPopDensity[i];
+
+        L.marker (cityCoords[i]).addTo(map)
+        .bindPopup(popup);{
+        }
+        
+        }
     
 
 </script>
