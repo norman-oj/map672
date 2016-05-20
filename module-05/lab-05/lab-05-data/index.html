@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Lab 05 Starter Template</title>
+    <title>Cities I'd Like to Live In</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -56,16 +56,16 @@
 
 <body>
     <header>
-        <h1>Map Title</h1>
-        <h2>Map Subtitle</h2>
+        <h1>Cities I'd Like to Live In</h1>
+        <h2>With Population Density</h2>
     </header>
 
     <div id='map'></div>
     <button id='map-cities'>Map Cities</button>
     <footer>
-        <p>Map authored by YOUR NAME</p>
-        <p>Additional information about the data and map goes here.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis urna magna, maximus nec laoreet sit amet, dictum ultricies nibh. Ut id auctor lacus. Nam a dolor et justo luctus luctus. Duis a elit eget risus dictum vehicula id eu elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed enim nisl.
+        <p>Map authored by Norman Ornelas Jr.</p>
+        <p>City coordinates, population, and area attained through Google search.</p>
+        <p>For whatever reason, these are cities I'd like to spend an extended amount of time in.
         </p>
     </footer>
 
@@ -73,7 +73,7 @@
     
     // map options
     var options = {
-        center: [20,-20],
+        center: [39.987785, -4.597517],
         zoom: 2
     }
     
@@ -99,11 +99,9 @@
     
     button.addEventListener("click", function() {
          
-        var units = prompt('Enter the units for calculating density', 'Enter "miles" or "km"');
-        
-        function mapCities() {
-                              
-        }
+        do {
+            var units = prompt('Enter the units for calculating density', 'Enter "miles" or "km"');
+        } while (units != "miles" && units != "km")
         
         mapCities(units);
         
@@ -111,39 +109,34 @@
         
     }); // addEventListener callback function ends here
     
-    
-    // write a function here named mapCities so that it accepts units as a parameter
-    
-        function mapCities (units) {
-            for (var i = 0; i < cities.length; i++)
-                function calcPopDensity (){
-                    
-                }
-                calcPopDensity(cityPops, cityArea, units)
-                
-            var units = density 
-                
-        }
-    
-    
-    // write a function named calcPopDensity here so that it accepts a single city's
-    // population, area, and the value for units determined by the user
-    
-        function calcPopDensity (cityPops, cityArea, units) {
-            var density = cityPops/cityArea
-            return
-        }
-
-    
+    function mapCities(units){
+        
+        
         for (var i = 0; i < cities.length; i++) {
-        var popup = "<b>"+(cities[i])+"</b><br>"
-        +"<b>Density</b>: "+calcPopDensity[i];
-
-        L.marker (cityCoords[i]).addTo(map)
-        .bindPopup(popup);{
+            
+            var density = calcPopDensity(cityPops[i], cityArea[i], units);
+            
+            var popup = "<b>"+(cities[i])+"</b><br>"+
+                "<b>Density</b>: "+density.toLocaleString()+" people per sq " + units;
+            
+            L.marker (cityCoords[i])
+                .addTo(map)
+                .bindPopup(popup);
+        }
+    
+    }
+    
+    
+    function calcPopDensity (pop, area, units) {
+        if (units == 'miles') {
+            var density = pop/area;
+        } else if (units == 'km') {
+            var density = pop/(area * 2.58999);
         }
         
-        }
+        return density;
+
+    }
     
 
 </script>
